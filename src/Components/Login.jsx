@@ -1,8 +1,18 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import Lottie from "lottie-react";
 import loginAnimation from "../../public/login-lottie/Animation - 1699200714684.json"
 import { Link } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 const login = () => {
+		const {login , User} = useAuth()
+		const handleLogin = e =>{
+			e.preventDefault()
+			const form = e.target
+			const email= form.email.value
+			const password = form.password.value
 
+			console.log( email , password)
+		}
     return (
         <div className="max-w-screen-2xl mx-auto bg-gradient-to-r from-indigo-500 via-emerald-500 to-pink-500 my-10">
 			<h2 className="text-5xl font-semibold text-center text-white py-5">Login To Tour Account</h2>
@@ -26,7 +36,7 @@ const login = () => {
 		<p className="px-3 dark:text-gray-400">OR</p>
 		<hr className="w-full dark:text-gray-400"/>
 	</div>
-	<form className="space-y-8">
+	<form className="space-y-8" onSubmit={handleLogin}>
 		<div className="space-y-4">
 			<div className="space-y-2">
 				<label name="email" className="block text-xl">Email address</label>
@@ -41,7 +51,7 @@ const login = () => {
 			</div>
 		</div>
 		<div className="flex justify-center">
-		<button type="button" className="bg-gradient-to-r from-emerald-500  to-blue-500 text-white text-xl font-medium  px-6 py-2 ">Sign in</button>
+		<button type="submit" className="bg-gradient-to-r from-emerald-500  to-blue-500 text-white text-xl font-medium  px-6 py-2 ">Sign in</button>
 		</div>
 	</form>
 					</div></section>

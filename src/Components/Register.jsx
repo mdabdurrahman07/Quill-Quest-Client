@@ -1,9 +1,50 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import registerAnimation from '../../public/lottie-animation/Animation - 1699197918381.json'
-const Register = () => {
-    const handleRegister = () =>{
+import useAuth from "../hooks/useAuth";
+import { updateProfile } from "firebase/auth";
+import toast from "react-hot-toast";
 
+
+const Register = () => {
+  const {createUser} = useAuth()
+     
+    const handleRegister = e =>{
+      
+     e.preventDefault()
+     
+     const form = e.target
+     
+     const name = form.name.value
+     const email= form.email.value
+     const url = form.url.value
+     const password = form.password.value
+
+     console.log(name , email , url , password)
+
+     createUser(email , password)
+     .then(res=> {
+      console.log(res.user)
+      if(res.user){
+        return toast.success('User Created Successfully')
+      }
+      updateProfile(res.user, {
+        displayName: name, photoURL: url
+      }).then(() => {
+        
+      }).catch((error) => {
+        console.log(error.message)
+      });
+     })
+     .catch(err =>{
+      console.log(err.message)
+      if(err){
+        return toast.error(err.message)
+      }
+     })
+
+       
     }
     // const handleGoogle = () => {
 

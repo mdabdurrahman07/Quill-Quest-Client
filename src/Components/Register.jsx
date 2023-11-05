@@ -9,7 +9,7 @@ const Register = () => {
 
     // }
     return (
-        <div className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 max-w-screen-2xl mx-auto">
+        <div className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 max-w-screen-2xl mx-auto my-10">
             <h1 className="text-5xl font-medium text-center py-5 text-white">
                 Welcome To Our Registration Page
             </h1>

@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const login = () => {
 
     return (
-        <div className="max-w-screen-2xl mx-auto bg-gradient-to-r from-indigo-500 via-emerald-500 to-pink-500">
-			<h2 className="text-5xl font-semibold text-center text-white py-5">Login to your account</h2>
+        <div className="max-w-screen-2xl mx-auto bg-gradient-to-r from-indigo-500 via-emerald-500 to-pink-500 my-10">
+			<h2 className="text-5xl font-semibold text-center text-white py-5">Login To Tour Account</h2>
 				<div className="flex-row lg:flex gap-5 items-center p-10">
 					<section className="flex-1">   
  <div className="w-96 max-w-md p-4 rounded-md shadow sm:p-8 bg-white">
@@ -41,7 +41,7 @@ const login = () => {
 			</div>
 		</div>
 		<div className="flex justify-center">
-		<button type="button" className="bg-gradient-to-r from-pink-500  to-purple-500 text-white text-xl font-medium  px-6 py-2 ">Sign in</button>
+		<button type="button" className="bg-gradient-to-r from-emerald-500  to-blue-500 text-white text-xl font-medium  px-6 py-2 ">Sign in</button>
 		</div>
 	</form>
 					</div></section>

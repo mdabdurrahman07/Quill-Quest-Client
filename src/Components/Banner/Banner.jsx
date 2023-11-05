@@ -1,9 +1,20 @@
-import React from 'react';
+import SliderBanner from "./SliderBanner/SliderBanner";
+import TextBanner from "./TextBanner/TextBanner";
+
 
 const Banner = () => {
     return (
-        <div>
-            
+        <div className="max-w-screen-2xl mx-auto my-10 p-10 bg-[#DFE7E9] ">
+          <div className="flex-row md:flex justify-around items-center">
+              {/* typewriter */}
+          <section>
+            <TextBanner></TextBanner>
+            </section>  
+          {/* slider */}
+          <section>
+            <SliderBanner></SliderBanner>
+            </section>  
+          </div>
         </div>
     );
 };

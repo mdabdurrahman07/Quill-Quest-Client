@@ -1,25 +1,25 @@
-import { Link, NavLink } from "react-router-dom";
-
+import {  NavLink } from "react-router-dom";
+import logo from '../../public/logos/logo-no-background.png'
 const Header = () => {
    
     return (
-        <div className="max-w-screen-2xl mx-auto p-2">
+        <div className="max-w-screen-2xl mx-auto">
     
-        <div className="p-3 sticky">
-        <div className=" md:flex-none lg:flex justify-between p-2   drop-shadow-xl bg-base-100">
-  <div className="">
+        <div className="sticky">
+        <div className=" md:flex-none lg:flex justify-between p-2 drop-shadow-xl bg-base-100">
+  <div className="my-auto">
     <div className="dropdown">
       <label tabIndex={0} className="lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
-      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 my-auto">
                 <NavLink
             to="/"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "underline" : ""
+                isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
             }
             >
-            <li><a>Home</a></li>
+            <li><a className="font-medium text-lg">Home</a></li>
             </NavLink>
        
         <li>
@@ -28,7 +28,7 @@ const Header = () => {
           <NavLink
             to="/"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "underline" : ""
+                isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
             }
             >
             <li><a className="font-medium text-lg">My-services</a></li>
@@ -36,7 +36,7 @@ const Header = () => {
             <NavLink
             to="/"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "underline" : ""
+                isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
             }
             >
             <li><a className="font-medium text-lg">Add-services</a></li>
@@ -44,7 +44,7 @@ const Header = () => {
             <NavLink
             to="/"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "underline" : ""
+                isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
             }
             >
             <li><a className="font-medium text-lg">My-schedules</a></li>
@@ -52,24 +52,35 @@ const Header = () => {
           </ul>
         </li>
         <NavLink
-            to="/"
+            to="/login"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "underline" : ""
+                isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
             }
             >
             <li><a className="font-medium text-lg">login</a></li>
             </NavLink>
       </ul>
     </div>
-    <a className="font-bold  text-2xl">QuillQuest
-</a>
+    
+   
+     
+     
+      <a className="font-bold text-2xl ">
+   <span>   <img src={logo} className="w-16 inline-block" alt="" /> </span>
+       
+        <span className="ml-2">QuillQuest</span>
+        
+  
+        </a>
+     
+          
   </div>
-  <div className="hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
+  <div className="hidden lg:flex ">
+    <ul className="menu menu-horizontal px-1 my-auto">
     <NavLink
             to="/"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "underline" : ""
+                isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
             }
             >
             <li><a className="font-medium text-lg">Home</a></li>
@@ -81,7 +92,7 @@ const Header = () => {
           <NavLink
             to="/"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "underline" : ""
+                isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
             }
             >
             <li><a className="font-medium text-lg">My-services</a></li>
@@ -89,7 +100,7 @@ const Header = () => {
             <NavLink
             to="/"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "underline" : ""
+                isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
             }
             >
             <li><a className="font-medium text-lg">Add-services</a></li>
@@ -97,7 +108,7 @@ const Header = () => {
             <NavLink
             to="/"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "underline" : ""
+                isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
             }
             >
             <li><a className="font-medium text-lg">My-schedules</a></li>
@@ -106,9 +117,9 @@ const Header = () => {
         </details>
       </li>
       <NavLink
-            to="/"
+            to="/login"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "underline" : ""
+                isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
             }
             >
             <li><a className="font-medium text-lg">login</a></li>

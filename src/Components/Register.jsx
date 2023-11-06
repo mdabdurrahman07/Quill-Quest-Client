@@ -15,7 +15,6 @@ const Register = () => {
      e.preventDefault()
      
      const form = e.target
-     
      const name = form.name.value
      const email= form.email.value
      const url = form.url.value
@@ -26,16 +25,17 @@ const Register = () => {
      createUser(email , password)
      .then(res=> {
       console.log(res.user)
-      if(res.user){
-        return toast.success('User Created Successfully')
-      }
+      // updated user name and img
       updateProfile(res.user, {
         displayName: name, photoURL: url
       }).then(() => {
-        
-      }).catch((error) => {
-        console.log(error.message)
+        console.log()
+      }).catch(() => {
+        console.log()
       });
+      if(res.user){
+        return toast.success('User Created Successfully')
+      }
      })
      .catch(err =>{
       console.log(err.message)

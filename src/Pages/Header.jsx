@@ -1,7 +1,16 @@
 import {  NavLink } from "react-router-dom";
 import logo from '../../public/logos/logo-no-background.png'
+import useAuth from "../hooks/useAuth";
 const Header = () => {
-   
+   const {User , logout} = useAuth()
+   console.log(User)
+   const handleLogout = () =>{
+      logout()
+      .then(()=>{
+
+      })
+      .catch(error=>console.log(error.message))
+   }
     return (
         <div className="max-w-screen-2xl mx-auto">
     
@@ -21,7 +30,19 @@ const Header = () => {
             >
             <li><a className="font-medium text-lg">Home</a></li>
             </NavLink>
-       
+            <NavLink
+            to="/allServices"
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
+            }
+            >
+            <li><a className="font-medium text-lg">Services</a></li>
+            </NavLink>
+       {
+        User ? 
+
+          <>
+          
         <li>
           <a className="font-medium text-2xl">DashBoard</a>
           <ul className="p-2">
@@ -51,14 +72,20 @@ const Header = () => {
             </NavLink>
           </ul>
         </li>
+        
+            <li onClick={handleLogout}><a className="font-medium text-lg">logout</a></li>
+           
+          </>
+        :
         <NavLink
-            to="/login"
-            className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
-            }
-            >
-            <li><a className="font-medium text-lg">login</a></li>
-            </NavLink>
+        to="/login"
+        className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
+        }
+        >
+        <li><a className="font-medium text-lg">login</a></li>
+        </NavLink>
+       }
       </ul>
     </div>
     
@@ -85,7 +112,18 @@ const Header = () => {
             >
             <li><a className="font-medium text-lg">Home</a></li>
             </NavLink>
-      <li tabIndex={0}>
+            <NavLink
+            to="/allServices"
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
+            }
+            >
+            <li><a className="font-medium text-lg">Services</a></li>
+            </NavLink>
+      {
+        User ?
+        <>
+        <li tabIndex={0}>
         <details>
           <summary className="font-medium text-lg">DashBoard</summary>
           <ul className="p-5 ">
@@ -116,7 +154,12 @@ const Header = () => {
           </ul>
         </details>
       </li>
-      <NavLink
+     
+            <li onClick={handleLogout}><a className="font-medium text-lg">logout</a></li>
+          
+        </>
+        :
+        <NavLink
             to="/login"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
@@ -124,6 +167,7 @@ const Header = () => {
             >
             <li><a className="font-medium text-lg">login</a></li>
             </NavLink>
+      }
     </ul>
   </div>
   

@@ -3,8 +3,10 @@ import Lottie from "lottie-react";
 import loginAnimation from "../../public/login-lottie/Animation - 1699200714684.json"
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import toast from "react-hot-toast"
 const login = () => {
 		const {login , User} = useAuth()
+		console.log(User)
 		const handleLogin = e =>{
 			e.preventDefault()
 			const form = e.target
@@ -12,13 +14,26 @@ const login = () => {
 			const password = form.password.value
 
 			console.log( email , password)
+			login(email , password)
+			.then(res=>{
+				console.log(res.user)
+				if(res.user){
+					toast.success(`Login Successful`)
+				}
+			})
+			.catch(error=>{
+				console.log(error.message)
+				if(error){
+					toast.error(error.message)
+				}
+			})
 		}
     return (
         <div className="max-w-screen-2xl mx-auto bg-gradient-to-r from-indigo-500 via-emerald-500 to-pink-500 my-10">
 			<h2 className="text-5xl font-semibold text-center text-white py-5">Login To Tour Account</h2>
 				<div className="flex-row lg:flex gap-5 items-center p-10">
 					<section className="flex-1">   
- <div className="w-96 max-w-md p-4 rounded-md shadow sm:p-8 bg-white">
+ <div className="w-96 p-4 rounded-md shadow sm:p-8 bg-white -ml-5 md:ml-40 lg:ml-0">
 	
 	<p className="text-xl text-center ">Dont have account?
 		<Link to="/registration"><a   className="underline"> Register</a></Link>

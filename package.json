@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.6.0",
     "firebase": "^10.5.2",
     "flowbite": "^2.0.0",
     "flowbite-react": "^0.6.4",
@@ -20,9 +21,11 @@
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.11.0",
+    "react-loader-spinner": "^5.4.5",
     "react-router-dom": "^6.18.0",
     "react-simple-typewriter": "^5.0.1",
     "sort-by": "^1.2.0",
+    "sweetalert2": "^11.9.0",
     "swiper": "^11.0.3"
   },
   "devDependencies": {

@@ -47,7 +47,7 @@ const Header = () => {
           <a className="font-medium text-2xl">DashBoard</a>
           <ul className="p-2">
           <NavLink
-            to="/"
+            to="/myServices"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
             }
@@ -55,15 +55,15 @@ const Header = () => {
             <li><a className="font-medium text-lg">My-services</a></li>
             </NavLink>
             <NavLink
-            to="/"
+            to="/addServices"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
+                isPending ? "pending" : isActive ? "border-b-2 border-emerald-500" : ""
             }
             >
             <li><a className="font-medium text-lg">Add-services</a></li>
             </NavLink>
             <NavLink
-            to="/"
+            to="/mySchedules"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
             }
@@ -131,7 +131,7 @@ const Header = () => {
           <summary className="font-medium text-lg">DashBoard</summary>
           <ul className="p-5 lg:w-40">
           <NavLink
-            to="/"
+            to="/myServices"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
             }
@@ -139,7 +139,7 @@ const Header = () => {
             <li><a className="font-medium text-lg">My-services</a></li>
             </NavLink>
             <NavLink
-            to="/"
+            to="/addServices"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
             }
@@ -147,7 +147,7 @@ const Header = () => {
             <li><a className="font-medium text-lg">Add-services</a></li>
             </NavLink>
             <NavLink
-            to="/"
+            to="/mySchedules"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
             }

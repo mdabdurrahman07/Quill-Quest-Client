@@ -5,7 +5,7 @@ import {MdPhone , MdOutgoingMail , MdMap} from "react-icons/md"
 const Contact = () => {
     return (
         <div className="my-10  max-w-screen-2xl mx-auto">
-          <h1 className="font-bold text-5xl text-center">Contact Info</h1>
+          {/* <h1 className="font-bold text-5xl text-center">Contact Info</h1> */}
       <div className="flex-row lg:flex justify-around items-center gap-5 drop-shadow-xl">
    
          <section>

@@ -3,7 +3,7 @@ import logo from '../../public/logos/logo-no-background.png'
 import useAuth from "../hooks/useAuth";
 const Header = () => {
    const {User , logout} = useAuth()
-   console.log(User)
+   
    const handleLogout = () =>{
       logout()
       .then(()=>{
@@ -85,6 +85,9 @@ const Header = () => {
         >
         <li><a className="font-medium text-lg">login</a></li>
         </NavLink>
+
+    
+
        }
       </ul>
     </div>
@@ -126,7 +129,7 @@ const Header = () => {
         <li tabIndex={0}>
         <details>
           <summary className="font-medium text-lg">DashBoard</summary>
-          <ul className="p-5 ">
+          <ul className="p-5 lg:w-40">
           <NavLink
             to="/"
             className={({ isActive, isPending }) =>
@@ -154,8 +157,11 @@ const Header = () => {
           </ul>
         </details>
       </li>
-     
+             
             <li onClick={handleLogout}><a className="font-medium text-lg">logout</a></li>
+            {/* <li><img src={User.photoURL} className="w-10 h-10 rounded-full" alt="" /></li> 
+
+            <li><p>{User.displayName}</p></li>  */}
           
         </>
         :
@@ -168,7 +174,9 @@ const Header = () => {
             <li><a className="font-medium text-lg">login</a></li>
             </NavLink>
       }
+       
     </ul>
+   
   </div>
   
 </div>

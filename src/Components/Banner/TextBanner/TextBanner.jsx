@@ -3,7 +3,7 @@ import { Typewriter } from 'react-simple-typewriter'
 const TextBanner = () => {
     return (
         <div>
-         <div className='space-y-5'>
+         <div className='space-y-10'>
                {/*main content   */}
                <h1 className='text-5xl  font-semibold'>Welcome To QuillQuest</h1>
             {/* short description */}

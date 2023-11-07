@@ -12,10 +12,12 @@ import AddServices from "../Services/AddServices/AddServices";
 import PopularServices from "../Services/PopularService/PopularServices";
 import ServiceDetails from "../Services/ServiceDetails/ServiceDetails";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Error from "../Error/Error";
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement : <Error></Error>,
       children : [
         {
             path: '/',
@@ -37,20 +39,20 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
   },
       {
           
-        path : "/myServices",
-        element : <MyServices></MyServices>
+        path : "/manageServices",
+        element : <PrivateRoute><MyServices></MyServices></PrivateRoute>
       
   },
   {
           
     path : "/addServices",
-    element : <AddServices></AddServices>
+    element : <PrivateRoute><AddServices></AddServices></PrivateRoute>
 
   },
   {
           
     path : "/mySchedules",
-    element : <MyServices></MyServices>
+    element : <PrivateRoute><MyServices></MyServices></PrivateRoute>
 
   },
   {

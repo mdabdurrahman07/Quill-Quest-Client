@@ -39,7 +39,7 @@ const Header = () => {
             <li><a className="font-medium text-lg">Services</a></li>
             </NavLink>
        {
-        User ? 
+        User?.email ? 
 
           <>
           
@@ -47,12 +47,12 @@ const Header = () => {
           <a className="font-medium text-2xl">DashBoard</a>
           <ul className="p-2">
           <NavLink
-            to="/myServices"
+            to="/manageServices"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
             }
             >
-            <li><a className="font-medium text-lg">My-services</a></li>
+            <li><a className="font-medium text-lg">Manage-services</a></li>
             </NavLink>
             <NavLink
             to="/addServices"
@@ -124,19 +124,19 @@ const Header = () => {
             <li><a className="font-medium text-lg">Services</a></li>
             </NavLink>
       {
-        User ?
+        User?.email ?
         <>
         <li tabIndex={0}>
         <details>
           <summary className="font-medium text-lg">DashBoard</summary>
           <ul className="p-5 lg:w-40">
           <NavLink
-            to="/myServices"
+            to="/manageServices"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "border-b-2 border-fuchsia-500" : ""
             }
             >
-            <li><a className="font-medium text-lg">My-services</a></li>
+            <li><a className="font-medium text-lg">Manage-services</a></li>
             </NavLink>
             <NavLink
             to="/addServices"

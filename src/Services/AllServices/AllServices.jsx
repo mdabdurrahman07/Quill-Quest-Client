@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import useAxios from "../../hooks/useAxios";
+import { Link } from "react-router-dom";
 
 const AllServices = () => {
     // const handlefilter = e => {
@@ -51,8 +52,8 @@ const AllServices = () => {
               <p className="text-center text-xl font-bold"><span className="mr-3">Price</span>  ${service?.servicePrice}</p>
               <p className="text-center text-xl font-bold"><span className="mr-3">Service Area</span>  {service?.serviceArea}</p>
              
-              <div className="card-actions mt-2">
-                <button className="w-full bg-gray-800 py-3 text-white text-xl rounded-lg">View Details</button>
+              <div >
+                <Link className="card-actions mt-2" to={`/serviceDetails/${service?._id}`}><button className="w-full bg-gray-800 py-3 text-white text-xl rounded-lg">View Details</button></Link>
               </div>
             </div>
           </div>)

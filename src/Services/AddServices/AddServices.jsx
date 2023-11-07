@@ -22,6 +22,7 @@ const AddServices = () => {
      axios.post('allServices' , ServiceAllInfo)
      .then(response => {
         console.log(response.data)
+
         if(response.data.acknowledged){
             Swal.fire({
                 title: "Good job!",
@@ -29,6 +30,7 @@ const AddServices = () => {
                 icon: "success"
               });
         }
+        form.reset()
      })
      .catch(error => {
         console.log(error)
@@ -53,7 +55,7 @@ const AddServices = () => {
 				</div>
 				<div className="col-span-full sm:col-span-3">
 					<label name="lastname" className="text-2xl">Price</label>
-					<input name="price" type="number" placeholder="$100" className="w-full rounded-md py-3" />
+					<input name="price" type="number" placeholder="$100" required className="w-full rounded-md py-3" />
 				</div>
 				<div className="col-span-full sm:col-span-3">
 					<label name="email" className="text-2xl">Your Email</label>
@@ -61,19 +63,19 @@ const AddServices = () => {
 				</div>
 				<div className="col-span-full">
 					<label name="address" className="text-2xl">Service Description</label>
-					<input name="description" type="text" placeholder="" className="w-full rounded-md py-10" />
+					<input name="description" type="text" placeholder="" required className="w-full rounded-md py-10" />
 				</div>
 				<div className="col-span-full sm:col-span-2">
 					<label name="city" className="text-2xl">Service Name</label>
-					<input name="serviceName" type="text" placeholder="" className="w-full rounded-md py-3" />
+					<input name="serviceName" type="text" placeholder="" required className="w-full rounded-md py-3" />
 				</div>
 				<div className="col-span-full sm:col-span-2">
 					<label name="state" className="text-2xl">Service Area</label>
-					<input name="serviceArea" type="text" placeholder="" className="w-full rounded-md py-3" />
+					<input name="serviceArea" type="text" placeholder="" required className="w-full rounded-md py-3" />
 				</div>
 				<div className="col-span-full sm:col-span-2">
 					<label name="zip" className="text-2xl">Service Photo</label>
-					<input name="serviceUrl" type="url" placeholder="" className="w-full rounded-md py-3" />
+					<input name="serviceUrl" type="url" placeholder="" required className="w-full rounded-md py-3" />
 				</div>
 
                 <button type="submit" className="px-5 py-3 rounded-lg bg-slate-500 text-white text-xl font-bold">Add Service</button>

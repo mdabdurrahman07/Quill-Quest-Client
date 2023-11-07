@@ -9,6 +9,7 @@ import Login from "../Components/Login";
 import AllServices from "../Services/AllServices/AllServices";
 import MyServices from "../Services/MyServices/MyServices";
 import AddServices from "../Services/AddServices/AddServices";
+import PopularServices from "../Services/PopularService/PopularServices";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -25,7 +26,8 @@ import AddServices from "../Services/AddServices/AddServices";
        {
         path: "/login",
         element: <Login></Login>
-       },{
+       },
+       {
         
         path : "/allServices",
         element : <AllServices></AllServices>
@@ -49,8 +51,13 @@ import AddServices from "../Services/AddServices/AddServices";
     element : <MyServices></MyServices>
 
   },
+  {
+    path : '/popularServices',
+    element : <PopularServices></PopularServices>,
+    
+  }
       ]
-    },
+    }
     
 
    

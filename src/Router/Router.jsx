@@ -10,6 +10,8 @@ import AllServices from "../Services/AllServices/AllServices";
 import MyServices from "../Services/MyServices/MyServices";
 import AddServices from "../Services/AddServices/AddServices";
 import PopularServices from "../Services/PopularService/PopularServices";
+import ServiceDetails from "../Services/ServiceDetails/ServiceDetails";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -55,6 +57,11 @@ import PopularServices from "../Services/PopularService/PopularServices";
     path : '/popularServices',
     element : <PopularServices></PopularServices>,
     
+  },
+  {
+    path : '/serviceDetails/:id',
+    element : <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
+    loader : () => fetch('http://localhost:5000/allServices')
   }
       ]
     }

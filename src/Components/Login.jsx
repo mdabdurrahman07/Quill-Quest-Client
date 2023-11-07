@@ -14,6 +14,19 @@ const login = () => {
 			const password = form.password.value
 
 			console.log( email , password)
+							if(password.length < 6){
+								toast.error("The Password Must be at least 6 Characters")
+								return
+							}
+						else if(!/[!@#$%^&*()_+{}]/.test(password)){
+						toast.error("The Password Must Contain One Special Characters")
+										return
+				}
+							else if(!/^(?=.*[A-Z]).*$/.test(password)){
+												toast.error("The Password Must Contain One Capital Letter")
+												return
+							}
+
 			login(email , password)
 			.then(res=>{
 				console.log(res.user)

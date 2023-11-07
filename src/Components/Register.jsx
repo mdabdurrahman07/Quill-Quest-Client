@@ -22,7 +22,18 @@ const Register = () => {
      const password = form.password.value
 
      console.log(name , email , url , password)
-
+     if(password.length < 6){
+      toast.error("The Password Must be at least 6 Characters")
+      return
+    }
+    else if(!/[!@#$%^&*()_+{}]/.test(password)){
+             toast.error("The Password Must Contain One Special Characters")
+              return
+    }
+    else if(!/^(?=.*[A-Z]).*$/.test(password)){
+          toast.error("The Password Must Contain One Capital Letter")
+          return
+    }
      createUser(email , password)
      .then(res=> {
       console.log(res.user)
@@ -57,6 +68,9 @@ const Register = () => {
       })
       .catch(error =>{
         console.log(error)
+        if(error){
+          return toast.error(error.message)
+        }
       })
     }
     return (

@@ -8,7 +8,7 @@ This is a MERN project (Mongodb , Express , React , Nodejs). In  this project I 
 
  - Tablet & Mobile Responsive
  - Login & Register System 
- - Aos & Lottie Animation
+ - Lottie Animation
  - Private Route System
  - Loader
  - CRUD Method
@@ -18,7 +18,7 @@ This is a MERN project (Mongodb , Express , React , Nodejs). In  this project I 
 
 ## Links
 
-Live link of the Website :  [quillquest.web.app](https://www.google.com/)
+Live link of the Website :  [quillquest-92dfc.web.app](https://quillquest-92dfc.web.app/)
 
 
 

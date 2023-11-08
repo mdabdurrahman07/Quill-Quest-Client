@@ -65,12 +65,12 @@ import MySchedules from "../Services/MySchedules/MySchedules";
   {
     path : '/serviceDetails/:id',
     element : <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
-    loader : () => fetch('http://localhost:5000/allServices')
+    loader : () => fetch('https://quillquest-server.vercel.app/allServices')
   },
   {
     path : '/updateService/:id',
     element : <PrivateRoute><UpdateService></UpdateService></PrivateRoute>,
-    loader : () => fetch('http://localhost:5000/allServices')
+    loader : () => fetch('https://quillquest-server.vercel.app/allServices')
   }
       ]
     }

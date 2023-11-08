@@ -7,6 +7,7 @@ import { auth } from "../Firebase/Firebase";
 // eslint-disable-next-line no-undef
 export const AuthContext = createContext()
 const AuthProviders = ({children}) => {
+    
     const [User , setUser] = useState(null)
     const [loading , setloading] = useState(true)
 

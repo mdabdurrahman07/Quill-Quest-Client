@@ -159,9 +159,9 @@ const Header = () => {
       </li>
              
             <li onClick={handleLogout}><a className="font-medium text-lg">logout</a></li>
-            {/* <li><img src={User.photoURL} className="w-10 h-10 rounded-full" alt="" /></li> 
+            <li><img src={User.photoURL} className="w-16 h-12 " alt="" /></li> 
 
-            <li><p>{User.displayName}</p></li>  */}
+            
           
         </>
         :

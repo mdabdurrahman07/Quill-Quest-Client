@@ -14,6 +14,7 @@ import ServiceDetails from "../Services/ServiceDetails/ServiceDetails";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Error from "../Error/Error";
 import UpdateService from "../Services/UpdateService/UpdateService";
+import MySchedules from "../Services/MySchedules/MySchedules";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -53,7 +54,7 @@ import UpdateService from "../Services/UpdateService/UpdateService";
   {
           
     path : "/mySchedules",
-    element : <PrivateRoute><MyServices></MyServices></PrivateRoute>
+    element : <PrivateRoute><MySchedules></MySchedules></PrivateRoute>
 
   },
   {

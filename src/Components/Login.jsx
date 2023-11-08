@@ -1,10 +1,12 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import Lottie from "lottie-react";
 import loginAnimation from "../../public/login-lottie/Animation - 1699200714684.json"
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import toast from "react-hot-toast"
 const login = () => {
+	const location = useLocation()
+	const navigate = useNavigate()
 		const {login , User , googleLogin} = useAuth()
 		console.log(User)
 		const handleLogin = e =>{
@@ -33,6 +35,8 @@ const login = () => {
 				if(res.user){
 					toast.success(`Login Successful`)
 				}
+				
+
 			})
 			.catch(error=>{
 				console.log(error.message)
@@ -40,6 +44,8 @@ const login = () => {
 					toast.error(error.message)
 				}
 			})
+			// navigate
+			navigate(location?.state ? location?.state : '/')
 		}
 		const handleGoogle = () => {
 			googleLogin()

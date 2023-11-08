@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
 
+import {  Navigate, useLocation } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import { RotatingLines } from  'react-loader-spinner'
 
 const PrivateRoute = ({children}) => {
+    const location = useLocation()
     const {User , loading} = useAuth()
     if(loading){
         return <RotatingLines
@@ -15,9 +17,10 @@ const PrivateRoute = ({children}) => {
         visible={true}
       />
     }
-    if(User?.email){
+    if(User){
         return children
     }
+    return <Navigate state={location.pathname} to="/login"></Navigate>
 };
 
 export default PrivateRoute;

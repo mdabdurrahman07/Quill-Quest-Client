@@ -53,7 +53,7 @@ const MyServices = () => {
     }
 
     return (
-        <div className="max-w-screen-2xl mx-auto p-2 mt-32 mb-20">
+        <div className="max-w-screen-2xl mx-auto p-2 mt-16 md:mt-32 mb-20">
             <h1 className="text-xl font-bold text-center mb-5">Welcome <span className="text-orange-500">{User?.email}</span> to the Manage Service</h1>
           <div className="grid grid-cols-1 justify-center items-center gap-5 my-10">
             {
@@ -61,7 +61,7 @@ const MyServices = () => {
                 <figure><img src={service?.serviceUrl} alt="Shoes" className="max-w-sm md:max-w-md" /></figure>
                 <div className="card-body">
                   <h2 className="card-title">{service?.serviceName}</h2>
-                  <p>{service?.ServiceDesc.slice(0,300)}.... <span className="text-blue-500">Read more</span></p>
+                  <p>{service?.ServiceDesc}</p>
                       <div className="w-30 h-[1px] bg-black my-2"></div>
                   
                       <h1 className="text-center font-bold">Service Provider info</h1>
@@ -73,7 +73,7 @@ const MyServices = () => {
                   <p className="text-center text-xl font-bold"><span className="mr-3">Service Area</span>  {service?.serviceArea}</p>
                  
                   <div className="flex justify-around items-center">
-                    <button className="bg-emerald-500 text-white font-bold text-2xl px-6 py-2 rounded-xl">Update Service</button>
+                   <Link to={`/updateService/${service?._id}`}> <button className="bg-emerald-500 text-white font-bold text-2xl px-6 py-2 rounded-xl">Update Service</button></Link>
                     <button onClick={()=>handleDelete(service?._id)} className="bg-red-500 text-white font-bold text-2xl px-6 py-2 rounded-xl">Delete Service</button>
                   </div>
                 </div>

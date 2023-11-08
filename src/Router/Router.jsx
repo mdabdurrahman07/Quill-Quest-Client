@@ -13,6 +13,7 @@ import PopularServices from "../Services/PopularService/PopularServices";
 import ServiceDetails from "../Services/ServiceDetails/ServiceDetails";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Error from "../Error/Error";
+import UpdateService from "../Services/UpdateService/UpdateService";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -63,6 +64,11 @@ import Error from "../Error/Error";
   {
     path : '/serviceDetails/:id',
     element : <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
+    loader : () => fetch('http://localhost:5000/allServices')
+  },
+  {
+    path : '/updateService/:id',
+    element : <PrivateRoute><UpdateService></UpdateService></PrivateRoute>,
     loader : () => fetch('http://localhost:5000/allServices')
   }
       ]

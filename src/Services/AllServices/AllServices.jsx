@@ -25,7 +25,7 @@ const AllServices = () => {
    },[])
    
     return (
-        <div className="max-w-screen-2xl mx-auto my-10">
+        <div className="max-w-screen-2xl mx-auto  mt-16 md:mt-32 mb-20">
                 {/* filter data */}
                 
                 <form  className="flex justify-center gap-2   mb-7">

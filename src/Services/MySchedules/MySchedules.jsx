@@ -20,8 +20,8 @@ const MySchedules = () => {
     },[])
     // console.log(bookingData)
     return (
-        <div className="max-w-screen-2xl mx-auto">
-            <div className="flex justify-center">
+        <div className="max-w-screen-2xl mx-auto mt-10 mb-32">
+            <div className="flex-row lg:flex justify-center">
             <section className="flex-1 bg-teal-500 h-full">
                 <h1 className="text-4xl text-white text-center p-2 underline">My Bookings</h1>
 
@@ -42,9 +42,9 @@ const MySchedules = () => {
      {
         bookingData?.map(booking =>  <tr key={booking?._id}>
         
-            <td className="font-bold text-gray-900">{booking?.BookingServiceName}</td>
-            <td className="font-bold text-gray-900">{booking?.BookingDate}</td>
-            <td className="font-bold text-gray-900">{booking?._id}</td>
+            <td className="font-bold text-gray-900">{booking?.BookingServiceName ? booking?.BookingServiceName : "Please , Book a Service"  }</td>
+            <td className="font-bold text-gray-900">{booking?.BookingDate ? booking?.BookingDate : "Please , Book a Service" }</td>
+            <td className="font-bold text-gray-900">{booking?._id ? booking?._id :  "Please , Book a Service" }</td>
           </tr>)
      }
   

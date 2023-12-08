@@ -17,7 +17,15 @@ This is a MERN project. In  this project  I has use basic mongodb CRUD method , 
  - Dynamics Routes
  - Secure Database
  
-
+## Dependencies
+- Firebase config 
+- npm/yarn
+- Mongodb uri 
+## Technology 
+- React
+- Node js
+- Mongodb
+- Express
 ## Links
 
 Live link of the Website :  [quillquest-92dfc.web.app](https://quillquest-92dfc.web.app/)
